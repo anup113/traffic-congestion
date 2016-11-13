@@ -1,6 +1,3 @@
-<?php
-
-?>
 
 <!doctype html>
 <html lang="en">
@@ -16,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
   </head>
-  <body style="background-color:gray;">
+  <body>
     <header>
       <nav id="header-nav" class="navbar navbar-default">
         <div class="container">
@@ -25,7 +22,7 @@
               <div id="logo-img" alt="Logo image"></div>
             </a>
             <div class="navbar-brand">
-              <a href="index.php"><h1>Trafic Conjestion Detection System</h1></a>
+              <a href="index.php"><h1>Traffic Congestion Detection System</h1></a>
             </div>
             <!-- <div class="navbar navbar-right">
             <a class="material-icons md-36">info</a>
@@ -40,40 +37,50 @@
           <div id="collapsable-nav" class="collapse navbar-collapse">
            <ul id="nav-list" class="nav navbar-nav navbar-right">
             <li>
-              <a href=data.php><i class="material-icons md-36 color">info</i></a>
+              <a href='data.html'><i class="material-icons md-36 color">info</i></a>
             </li>
             <!-- <li>
               <a href=index.html><i class="material-icons md-36 color">info</i></a>
             </li> -->
             <li>
-              <a href=index.html><i class="material-icons md-36 color">help</i></a>
+              <a href='index.html'><i class="material-icons md-36 color">help</i></a>
             </li>
           </ul> 
         </div>
       </nav>
-      	<div class="col-lg-2">
-	      	<div class="input-group">
-	            <span class="input-group-addon">ID</span>
-	            <input id="name" class="form-control" type="text" placeholder="eg.13">
-	         </div>
-	    </div>
-	    <div class="col-lg-1">
-          <span class="input-group" "input-group-btn">
-            
-              <input class="btn btn-default" type="submit" id="name-submit" value="Search"></input>
-              <!-- <a href= ajax/ajax.php></a> -->
-          </span>
-	    </div>
-	    <div id = "name-data"></div>
-
-      <!-- <div>
-    	Name:
-      	<input type= "text" id = "name" class="form-control" placeholder="Ram">
-		<input type = "submit" id = "name-submit">
-		<div id = "name-data"></div>
+        <!-- <div class="row">
+        <div class="input-group">
+          <span class="input-group-addon" id="bassic-addon1">From</span>
+          <input type="text" class="form-control" placeholder="Where you are" aria-describedly="basic-addon1">
       </div> -->
+      <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-addon">From</span>
+            <input id="pac-input1" class="form-control" type="text" placeholder="Where you are" aria-describedly="basic-addon1">
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+          <div class="input-group">
+            <span class="input-group-addon">GoTo</span>
+            <input id="pac-input2" class="form-control" type="text" placeholder="Your Destination">
+          </div>
+        </div>
+        <div class="col-lg-1">
+          <span class="input-group" "input-group-btn">
+            <button class="btn btn-default" type="button">Search</button>
+          </span>
+        </div>
+      </div>
+      <script src="js/map.js"></script>
+      <div id="googleMap"></div>
   </body>
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCdtjIHGN7ej7ZxKOQsqCBgrBQbBmywg0&libraries=places&callback=initialize"
+        async defer></script>
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/global.js"></script>
 </html>
