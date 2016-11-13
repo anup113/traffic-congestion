@@ -1,13 +1,13 @@
 <?php
 
-	$file = 'sample.csv';
-	if($handle = fopen($file, 'r')){
-		$content = fgetcsv($handle, filesize($file));
-		fclose($handle);
+	// $file = 'sample.csv';
+	// if($handle = fopen($file, 'r')){
+	// 	$content = fgetcsv($handle, filesize($file));
+	// 	fclose($handle);
 
-	} else {
-		echo "couldn't open file";
-	}
+	// } else {
+	// 	echo "couldn't open file";
+	// }
 ?>
 <!doctype html>
 <html lang="en">
@@ -85,21 +85,21 @@
         </div>
       </div>
 	  <script>
-		var myvar = <?php echo json_encode($content); ?>;
-		if(myvar[0] == 1){
-			myvar[0] = "RED";
-		}
-		else{
-			myvar[0] = "GREEN";
-		}
-		if(myvar[1] == 1){
-			myvar[1] = "RED";
-		}
-		else{
-			myvar[1] = "GREEN";
-		}
-		alert(myvar[0]);
-		alert(myvar[1]);
+		// var myvar = <?php echo json_encode($content); ?>;
+		// if(myvar[0] == 1){
+		// 	myvar[0] = "RED";
+		// }
+		// else{
+		// 	myvar[0] = "GREEN";
+		// }
+		// if(myvar[1] == 1){
+		// 	myvar[1] = "RED";
+		// }
+		// else{
+		// 	myvar[1] = "GREEN";
+		// }
+		// alert(myvar[0]);
+		// alert(myvar[1]);
 		</script>
 	  <script src="js/script.js"></script>
       <div id="googleMap"></div>
