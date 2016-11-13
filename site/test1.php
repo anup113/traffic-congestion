@@ -1,14 +1,11 @@
 
 
-
+<html><head><title>MySQL Table Viewer</title></head><body>
 <?php
-// require "ajax/ajax.php";
-
 $db_host = 'localhost';
 $db_user = 'root';
 $db_pwd = '';
 
-$search = $_POST['Id'];
 $database = 'traffic_record';
 $table = 'roada';
 
@@ -18,8 +15,8 @@ if (!mysql_connect($db_host, $db_user, $db_pwd))
 if (!mysql_select_db($database))
     die("Can't select database");
 
-// sending query LIKE '%$search%
-$result = mysql_query("SELECT * FROM roada WHERE `Day`='%$search%'");
+// sending query
+$result = mysql_query("SELECT * FROM {$table} WHERE `Day`='5'");
 if (!$result) {
     die("Query to show fields from table failed");
 }
@@ -32,8 +29,10 @@ echo "<table border='1'><tr>";
 for($i=0; $i<$fields_num; $i++)
 {
     $field = mysql_fetch_field($result);
+	
     echo "<td>{$field->name}</td>";
 }
+die();
 echo "</tr>\n";
 // printing table rows
 while($row = mysql_fetch_row($result))
@@ -49,3 +48,4 @@ while($row = mysql_fetch_row($result))
 }
 mysql_free_result($result);
 ?>
+</body></html>

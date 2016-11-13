@@ -1,4 +1,14 @@
+<?php
 
+	$file = 'sample.csv';
+	if($handle = fopen($file, 'r')){
+		$content = fgetcsv($handle, filesize($file));
+		fclose($handle);
+
+	} else {
+		echo "couldn't open file";
+	}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,11 +28,11 @@
       <nav id="header-nav" class="navbar navbar-default">
         <div class="container">
           <div class="navbar-header">
-            <a href="index.php" class="pull-left visible-md visible-lg">
+            <a href="index.html" class="pull-left visible-md visible-lg">
               <div id="logo-img" alt="Logo image"></div>
             </a>
             <div class="navbar-brand">
-              <a href="index.php"><h1>Traffic Congestion Detection System</h1></a>
+              <a href="index.html"><h1>Traffic Congestion Detection System</h1></a>
             </div>
             <!-- <div class="navbar navbar-right">
             <a class="material-icons md-36">info</a>
@@ -37,13 +47,13 @@
           <div id="collapsable-nav" class="collapse navbar-collapse">
            <ul id="nav-list" class="nav navbar-nav navbar-right">
             <li>
-              <a href='data.html'><i class="material-icons md-36 color">info</i></a>
+              <a href=data.html><i class="material-icons md-36 color">info</i></a>
             </li>
             <!-- <li>
               <a href=index.html><i class="material-icons md-36 color">info</i></a>
             </li> -->
             <li>
-              <a href='index.html'><i class="material-icons md-36 color">help</i></a>
+              <a href=index.html><i class="material-icons md-36 color">help</i></a>
             </li>
           </ul> 
         </div>
@@ -74,12 +84,29 @@
           </span>
         </div>
       </div>
-      <script src="js/map.js"></script>
+	  <script>
+		var myvar = <?php echo json_encode($content); ?>;
+		if(myvar[0] == 1){
+			myvar[0] = "RED";
+		}
+		else{
+			myvar[0] = "GREEN";
+		}
+		if(myvar[1] == 1){
+			myvar[1] = "RED";
+		}
+		else{
+			myvar[1] = "GREEN";
+		}
+		alert(myvar[0]);
+		alert(myvar[1]);
+		</script>
+	  <script src="js/script.js"></script>
       <div id="googleMap"></div>
   </body>
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCdtjIHGN7ej7ZxKOQsqCBgrBQbBmywg0&libraries=places&callback=initialize"
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5LsltJUc3R4SA1ZZRsUvSuQgLGKPdkdU&libraries=places&callback=initialize"
         async defer></script>
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
