@@ -112,7 +112,7 @@
 			for(var i=0; i<pointsArray2.length; i++){
 			  var overlap = new google.maps.Polyline({
 				  path: pointsArray2,
-				  strokeColor: myvar[1],
+				  strokeColor: RED,
 				  strokeWeight: 4
 			  });
 				overlap.setMap(map);
@@ -125,7 +125,7 @@
 			for(var i=0; i<pointsArray1.length; i++){
 			  var overlap = new google.maps.Polyline({
 				  path: pointsArray1,
-				  strokeColor: myvar[0],
+				  strokeColor: GREEN,
 				  strokeWeight: 4
 			  });
 				overlap.setMap(map);
